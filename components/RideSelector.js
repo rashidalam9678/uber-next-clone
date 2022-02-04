@@ -1,6 +1,5 @@
 import tw from "tailwind-styled-components";
 import {carList} from '../data/carList'
-console.log(carList);
 
 
 const RideSelector = () => {
@@ -30,12 +29,12 @@ const RideSelector = () => {
 
 export default RideSelector;
 const Wrapper = tw.div`
-flex flex-col `;
+flex flex-col overflow-y-scroll `;
 const Title = tw.div`
-text-gray-600 text-center text-sm py-3 border-b`;
+text-gray-600 text-center text-sm py-3 border-b `;
 const CarList = tw.div``;
 const Car = tw.div`
-flex items-center mx-4 border-b`;
+flex items-center  border-b p-4 px-8`;
 const CarImage = tw.img`
 h-14 mr-12`;
 const CarDetails = tw.div`

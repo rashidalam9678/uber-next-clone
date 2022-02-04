@@ -31,6 +31,11 @@ const Confirm = () => {
 
     return (
         <Wrapper>
+            <Link href='/'>
+                <ButtonContainer>
+                    <BackButton src="https://img.icons8.com/ios-filled/50/000000/left.png" />
+                </ButtonContainer>
+            </Link>
             <Map pickupCoordinates={pickupCoordinates} dropoffCoordiantes={dropoffCoordiantes} />
             <SearchResultContainer>
                 <RideContainer>
@@ -49,12 +54,17 @@ const Confirm = () => {
 export default Confirm;
 
 const Wrapper = tw.div`
-flex flex-col h-screen`;
+flex flex-col h-screen relative`;
 const SearchResultContainer = tw.div`
-flex flex-col flex-1 `;
+flex flex-col flex-1 h-1/2`;
  const RideContainer = tw.div`
- flex-1 `;
- const ConfirmButtonContainer = tw.div` border-t-2`;
+ flex-1  overflow-y-scroll`;
+ const ConfirmButtonContainer = tw.div` border-t-2 `;
  const ConfirmButton = tw.div`
- flex justify-center items-center bg-black text-white my-4 mx-4 cursor-pointer p-4 text-xl`;
+ flex justify-center items-center bg-black text-white my-4 mx-4 cursor-pointer p-2 text-xl`;
+
+ const ButtonContainer = tw.div`
+bg-white absolute top-2 left-2 z-20 rounded-full`;
+const BackButton = tw.img`
+h-12 hover:bg-blue-200 hover:scale-102 rounded-full cursor-pointer z-22`;
 
