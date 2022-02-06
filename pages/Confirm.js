@@ -6,8 +6,8 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
 const Confirm = () => {
-    const [pickupCoordinates, setPickup] = useState();
-    const [dropoffCoordiantes, setDropoff] = useState();
+    const [pickupCoordinates, setPickup] = useState([0, 0]);
+    const [dropoffCoordinates, setDropoff] = useState([0, 0]);
     const router = useRouter();
     const { pickup, dropoff } = router.query;
     const getPickupCoordinates = (pickup) => {
@@ -31,15 +31,15 @@ const Confirm = () => {
 
     return (
         <Wrapper>
-            <Link href='/'>
+            <Link href='/Search'>
                 <ButtonContainer>
                     <BackButton src="https://img.icons8.com/ios-filled/50/000000/left.png" />
                 </ButtonContainer>
             </Link>
-            <Map pickupCoordinates={pickupCoordinates} dropoffCoordiantes={dropoffCoordiantes} />
+            <Map pickupCoordinates={pickupCoordinates} dropoffCoordinates={dropoffCoordinates} />
             <SearchResultContainer>
                 <RideContainer>
-                    <RideSelector/>
+                    <RideSelector pickupCoordinates={pickupCoordinates} dropoffCoordinates={dropoffCoordinates}/>
                 </RideContainer>
                 <ConfirmButtonContainer>
                     <ConfirmButton>Confirm UberX</ConfirmButton>
@@ -66,5 +66,5 @@ flex flex-col flex-1 h-1/2`;
  const ButtonContainer = tw.div`
 bg-white absolute top-2 left-2 z-20 rounded-full`;
 const BackButton = tw.img`
-h-12 hover:bg-blue-200 hover:scale-102 rounded-full cursor-pointer z-22`;
+h-12 hover:bg-gray-100 hover:scale-102 rounded-full cursor-pointer z-22`;
 

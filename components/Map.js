@@ -14,14 +14,14 @@ const Map = (props) => {
         if (props.pickupCoordinates) {
             addToMap(map, props.pickupCoordinates);
         }
-        if (props.dropoffCoordiantes) {
-            addToMap(map, props.dropoffCoordiantes);
+        if (props.dropoffCoordinates) {
+            addToMap(map, props.dropoffCoordinates);
         };
-        if (props.pickupCoordinates && props.dropoffCoordiantes) {
-            map.fitBounds([props.pickupCoordinates, props.dropoffCoordiantes]
+        if (props.pickupCoordinates && props.dropoffCoordinates) {
+            map.fitBounds([props.pickupCoordinates, props.dropoffCoordinates]
                 , { padding: 100 });
         }
-    }, [props.pickupCoordinates, props.dropoffCoordiantes]);
+    }, [props.pickupCoordinates, props.dropoffCoordinates]);
     const addToMap = (map, coordiantes) => {
         const marker1 = new mapboxgl.Marker()
             .setLngLat(coordiantes)
